@@ -1,3 +1,5 @@
+// components/templates/Homepage.tsx
+
 import type { NextPage } from 'next'
 
 const Homepage: NextPage = () => {
