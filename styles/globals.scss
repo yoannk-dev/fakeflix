@@ -1,0 +1,12 @@
+@import './normalize.scss';
+@import './variables.module.scss';
+
+html, body {
+  background: $black;
+  color: $white;
+}
+
+body {
+  font-family: "Poppins";
+  font-size: $base-font-size;
+}
