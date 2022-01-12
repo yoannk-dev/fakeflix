@@ -2,9 +2,10 @@
 
 import type { NextPage } from 'next'
 import Logo from '../molecules/Logo'
+import styles from './Header.module.scss'
 
 const Header: NextPage = () => {
-  return <header>
+  return <header className={styles.header}>
     <Logo />
   </header>
 }

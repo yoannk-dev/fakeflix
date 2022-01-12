@@ -1,12 +1,16 @@
 // components/molecules/Logo.tsx
 
 import type { NextPage } from 'next'
-import styles from './Logo.module.scss'
+import Image from 'next/image'
+import logo from '../../public/logo.png'
 
 const Logo: NextPage = () => {
-  return <span className={styles.red}>
-    Logo
-  </span>
+  return <Image
+    src={logo}
+    alt="fakeflix"
+    width={120}
+    height={35}
+  />
 }
 
 export default Logo
