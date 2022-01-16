@@ -2,8 +2,16 @@
 
 import type { NextPage } from 'next'
 
-const Homepage: NextPage = () => {
-  return <div>Ceci est le template Homepage</div>
+interface Props {
+  highLight: {
+    title: string
+  } | null
+}
+
+const Homepage: NextPage<Props> = (props) => {
+  const { highLight } = props
+  // to do, component HighlightMovie
+  return <div>{highLight && highLight.title}</div>
 }
 
 export default Homepage
