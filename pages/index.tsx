@@ -42,7 +42,7 @@ const Home: NextPage<Props> = (props) => {
     const randomDiscover = shuffleArray(props.discover)
     const highlightMovie: Movie = randomDiscover[0]
     setHighLightMovie(highlightMovie)
-  }, []);
+  }, [props.discover]);
 
   return <>
     <Homepage highLight={highLightMovie} />
