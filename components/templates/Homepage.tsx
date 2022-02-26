@@ -1,17 +1,19 @@
 // components/templates/Homepage.tsx
 
-import type { NextPage } from 'next'
+import HomepageHighlight from "../organisms/HomepageHighlight";
 
-interface Props {
-  highLight: {
-    title: string
-  } | null
-}
+import type { Movie } from '../../pages/index'
 
-const Homepage: NextPage<Props> = (props) => {
-  const { highLight } = props
-  // to do, component HighlightMovie
-  return <div>{highLight && highLight.title}</div>
+type Props = {
+  highlight: Movie | null
+};
+
+const Homepage: React.FunctionComponent<Props> = ({ highlight }): JSX.Element | null => {
+  if (!highlight) {
+    return null;
+  }
+
+  return <HomepageHighlight highlight={highlight} />
 }
 
 export default Homepage

@@ -1,0 +1,42 @@
+.root {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+}
+
+.tag {
+  background: #E30613;
+  color: #fff;
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 5px 15px;
+}
+
+.image {
+  width: 100%;
+  overflow: hidden;
+  background: rgba(255,255,255,.1);
+
+  img {
+    object-fit: cover; 
+    background: rgba(255,255,255,.1);
+  }
+}
+.desc {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 30px;
+  background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,.85) 100%);
+}
+
+.title {
+  font-size: 30px;
+}
+
+.overview {
+  font-size: 18px;
+  padding-bottom: 15px;
+}

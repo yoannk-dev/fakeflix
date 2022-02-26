@@ -1,10 +1,9 @@
 // components/molecules/Logo.tsx
 
-import type { NextPage } from 'next'
 import Image from 'next/image'
 import logo from '../../public/logo.png'
 
-const Logo: NextPage = () => {
+const Logo: React.FunctionComponent = (): JSX.Element => {
   return <Image
     src={logo}
     alt="fakeflix"

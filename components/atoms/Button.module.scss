@@ -1,0 +1,16 @@
+.button {
+  background: #E30613;
+  color: #fff;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 10px 30px;
+  border-radius: 40px;
+  transition: all .3s;
+
+  &:hover {
+    background: darken(#E30613, 10%);
+    transition: all .3s;
+  }
+}
