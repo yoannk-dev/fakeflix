@@ -1,8 +1,9 @@
 // pages/index.tsx
 
-import type { GetStaticProps, NextPage } from 'next'
-import { useEffect, useState } from 'react'
-import Homepage from '../components/templates/Homepage'
+import type { GetStaticProps, NextPage } from 'next';
+import { useEffect, useState } from 'react';
+import Homepage from '../components/templates/Homepage';
+import { getLastWeeksDate } from '../utils/utils';
 
 type Movie = {
   adult: boolean,
@@ -24,7 +25,8 @@ type Movie = {
 export type { Movie };
 
 type Props = {
-  discover: Movie[]
+  discover: Movie[],
+  populars: Movie[],
 }
 
 const shuffleArray = (array: Movie[]): Movie[] => {
@@ -46,15 +48,19 @@ const Home: NextPage<Props> = (props) => {
     setHighLightMovie(highlightMovie);
   }, [props.discover]);
 
-  return <Homepage highlight={highLightMovie} />
+  return <Homepage highlight={highLightMovie} populars={props.populars} />
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const discover = await fetch('https://api.themoviedb.org/3/discover/movie?region=FR&air_date.gte=2022-01-01&with_watch_providers=8&watch_region=FR&sort_by=first_air_date.desc&api_key=' + process.env.TMDB_APIKEY).then((response) => response.json())
+  const lastWeek = getLastWeeksDate();
+  const discover = await fetch(`https://api.themoviedb.org/3/discover/movie?region=FR&release_date.gte=${lastWeek}&with_watch_providers=8&watch_region=FR&sort_by=release_date.desc&api_key=${process.env.TMDB_APIKEY}`).then((response) => response.json())
+
+  const populars = await fetch(`https://api.themoviedb.org/3/discover/movie?region=FR&release_date.gte=${lastWeek}&with_watch_providers=8&watch_region=FR&sort_by=popularity.desc&api_key=${process.env.TMDB_APIKEY}`).then((response) => response.json())
 
   return {
     props: {
-      discover: discover.results || null
+      discover: discover.results || null,
+      populars: populars.results || null,
     }
   }
 }

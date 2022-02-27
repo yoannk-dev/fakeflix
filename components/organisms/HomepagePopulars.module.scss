@@ -1,0 +1,14 @@
+.root {
+  position: relative;
+  padding: 30px;
+
+  :global {
+    .swiper-button-next, .swiper-button-prev {
+      color: #E30613;
+    }
+  }
+}
+
+.image {
+  background: rgba(255,255,255,.1);
+}
