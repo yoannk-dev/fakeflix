@@ -3,7 +3,8 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 Quick demo with The Movie DB Api.
 
 ## .env.local
-You need an The Movie DB key api.
+
+You need a TMDB key api.
 [https://developers.themoviedb.org/3/getting-started](https://developers.themoviedb.org/3/getting-started)
 
 ```bash
