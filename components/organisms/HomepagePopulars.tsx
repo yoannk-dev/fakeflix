@@ -22,13 +22,15 @@ const HomepagePopulars: React.FunctionComponent<Props> = ({ populars }) => {
     <SwiperSlide key={movie.id}>
       <div className={styles.card}>
         <div className={styles.image}>
-          <Image
-            src={`https://image.tmdb.org/t/p/w342${movie.poster_path}`}
-            width="500"
-            height="750"
-            alt={movie.title}
-            quality={100}
-          />
+          <a href={`https://www.themoviedb.org/movie/${movie.id}`} target="_blank" rel="noreferrer">
+            <Image
+              src={`https://image.tmdb.org/t/p/w342${movie.poster_path}`}
+              width="500"
+              height="750"
+              alt={movie.title}
+              quality={100}
+            />
+          </a>
         </div>
       </div>
     </SwiperSlide>
@@ -40,8 +42,16 @@ const HomepagePopulars: React.FunctionComponent<Props> = ({ populars }) => {
       <Swiper
         modules={[Navigation]}
         spaceBetween={30}
-        slidesPerView={5}
-        slidesPerGroup={5}
+        slidesPerView={2}
+        slidesPerGroup={1}
+        centeredSlides={true}
+        breakpoints={{
+          769: {
+            slidesPerGroup: 5,
+            slidesPerView: 5,
+            centeredSlides: false,
+          }
+        }}
         navigation
       >
         {listMovies}

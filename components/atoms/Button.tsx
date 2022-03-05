@@ -10,7 +10,7 @@ type Props = {
 
 const Button: React.FunctionComponent<Props> = ({ children, href, target }): JSX.Element => {
   return (
-    <a href={href} className={styles.button} target={target}>
+    <a href={href} className={styles.button} target={target} rel="noreferrer">
       {children}
     </a>
   )

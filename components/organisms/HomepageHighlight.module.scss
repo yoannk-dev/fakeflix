@@ -1,8 +1,12 @@
 .root {
   position: relative;
   width: 100%;
-  aspect-ratio: 16/8;
+  min-height: 450px;
   overflow: hidden;
+
+  @media (min-width: 769px) {
+    aspect-ratio: 16/8;
+  }
 }
 
 .tag {
@@ -34,10 +38,19 @@
 }
 
 .title {
-  font-size: 30px;
+  font-size: 22px;
+
+  @media (min-width: 769px) {
+    font-size: 30px;
+  }
 }
 
 .overview {
-  font-size: 18px;
+  font-size: 16px;
   padding-bottom: 15px;
+
+
+  @media (min-width: 769px) {
+    font-size: 18px;
+  }
 }

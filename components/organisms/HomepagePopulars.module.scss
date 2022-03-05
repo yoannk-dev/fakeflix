@@ -5,6 +5,27 @@
   :global {
     .swiper-button-next, .swiper-button-prev {
       color: #E30613;
+      background: rgba(0,0,0,.85);
+      width: 35px;
+      height: 35px;
+      border-radius: 100%;
+      padding: 4px;
+
+      &:after {
+        font-size: 20px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .swiper-slide {
+        opacity: .4;
+        transition: opacity .3s;
+      }
+
+      .swiper-slide-active {
+        opacity: 1;
+        transition: opacity .3s;
+      }
     }
   }
 }

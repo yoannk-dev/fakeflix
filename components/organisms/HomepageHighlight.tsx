@@ -31,7 +31,7 @@ const HomepageHighLight: React.FunctionComponent<Props> = ({ highlight }) => {
               <span className={styles.tag}>New on Netflix</span>
               <h1 className={styles.title}>{highlight.title}</h1>
               <p className={styles.overview}>
-                {highlight.overview.length > 200 ? highlight.overview.substring(0, 200) + '...' : highlight.overview }
+                {highlight.overview.length > 150 ? highlight.overview.substring(0, 150) + '...' : highlight.overview }
               </p>
               <Button href={`https://www.themoviedb.org/movie/${highlight.id}`}>
                 More
